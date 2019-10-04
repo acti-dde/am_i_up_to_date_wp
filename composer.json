@@ -1,0 +1,14 @@
+{
+  "name": "c2is/am_i_up_to_date_wp",
+  "description": "WordPress must-use plugin to send Wp and PHP versions to third party client",
+  "type": "wordpress-muplugin",
+  "require": {
+    "composer/installers": "~1.0",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Acti\\AmIUpToDate\\": "src"
+    }
+  }
+}
