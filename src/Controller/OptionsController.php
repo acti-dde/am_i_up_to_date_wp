@@ -26,7 +26,6 @@ final class OptionsController
     public function registerOptions()
     {
         register_setting('acti-amiuptodate', 'aiutd_route_url');
-        register_setting('acti-amiuptodate', 'aiutd_api_url');
         register_setting('acti-amiuptodate', 'aiutd_api_key');
     }
 

@@ -11,11 +11,6 @@
       </tr>
 
       <tr valign="top">
-        <th scope="row">API url</th>
-        <td><input type="url" name="aiutd_api_url" value="<?php echo esc_attr(get_option('aiutd_api_url')); ?>" /></td>
-      </tr>
-
-      <tr valign="top">
         <th scope="row">API key</th>
         <td><input type="text" name="aiutd_api_key" value="<?php echo esc_attr(get_option('aiutd_api_key')); ?>" /></td>
       </tr>

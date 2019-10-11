@@ -6,8 +6,6 @@ final class RouteController
 {
     private $_routeUrl;
 
-    private $_apiUrl;
-
     private $_apiKey;
 
     private $_headerApiKey;
@@ -15,11 +13,10 @@ final class RouteController
     public function __construct()
     {
         $this->_routeUrl = get_option('aiutd_route_url');
-        $this->_apiUrl = get_option('aiutd_api_url');
         $this->_apiKey = get_option('aiutd_api_key');
         $this->_headerApiKey = 'api_key';
 
-        if (!$this->_apiUrl && !$this->_apiKey) {
+        if (!$this->_routeUrl && !$this->_apiKey) {
             error_log('Am I Up To Date - Il faut renseigner les paramètres de l\Api dans le menu outils');
             exit;
         }
@@ -49,7 +46,7 @@ final class RouteController
         $data = array();
         $dataController = new DataController();
         $data['php'] = $dataController->getPhpVersion();
-        $data['cms'] = $dataController->getWordpressVersion();
+        $data['cms'] = 'wordpress-' . $dataController->getWordpressVersion();
         $data['plugins'] = $dataController->getPluginsVersions();
 
         return $data;
