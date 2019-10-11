@@ -7,10 +7,13 @@
  * Author: Acti
  */
 
-use Acti\AmIUpToDate\Route;
+use Acti\AmIUpToDate\Controller\OptionsController;
+use Acti\AmIUpToDate\Controller\RouteController;
 
 add_action('init', 'initUpToDateProcess');
+
 function initUpToDateProcess()
 {
-    new Route();
+    new OptionsController();
+    new RouteController();
 }

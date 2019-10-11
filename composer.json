@@ -3,8 +3,7 @@
   "description": "WordPress must-use plugin to send Wp and PHP versions to third party client",
   "type": "wordpress-muplugin",
   "require": {
-    "composer/installers": "~1.0",
-    "guzzlehttp/guzzle": "^6.3"
+    "composer/installers": "~1.0"
   },
   "autoload": {
     "psr-4": {
