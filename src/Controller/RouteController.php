@@ -16,11 +16,6 @@
             $this->_apiKey = get_option('aiutd_api_key');
             $this->_headerApiKey = 'api_key';
 
-            if (!$this->_routeUrl && !$this->_apiKey) {
-                error_log('Am I Up To Date - Il faut renseigner les paramètres de l\Api dans le menu outils');
-                exit;
-            }
-
             add_action('template_redirect', array($this, 'sendData'));
         }
 
@@ -28,7 +23,7 @@
         {
             global $wp;
 
-            if ($wp->request == $this->_routeUrl) {
+            if ($this->_routeUrl && $this->_apiKey && $wp->request == $this->_routeUrl) {
                 $headers = getallheaders();
                 if (isset($headers[$this->_headerApiKey]) && $headers[$this->_headerApiKey] == $this->_apiKey) {
                     $data = $this->_buildData();
