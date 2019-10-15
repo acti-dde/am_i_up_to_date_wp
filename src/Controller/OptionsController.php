@@ -1,7 +1,5 @@
 <?php
 
-  namespace Acti\AmIUpToDate\Controller;
-
 final class OptionsController
 {
     public function __construct()
@@ -31,7 +29,7 @@ final class OptionsController
 
     public function displayOptions()
     {
-        $optionsTemplatePath = WPMU_PLUGIN_DIR . '/am_i_up_to_date_wp/src/Templates/Options.php';
+        $optionsTemplatePath = AMIUPTODATE_SRC. '/Templates/Options.php';
 
         require_once $optionsTemplatePath;
     }

@@ -1,13 +1,7 @@
 <?php
 
-  namespace Acti\AmIUpToDate\Controller;
-
 final class DataController
 {
-    public function __construct()
-    {
-    }
-
     public function getPhpVersion()
     {
         return phpversion();

@@ -7,13 +7,16 @@
  * Author: Acti
  */
 
-use Acti\AmIUpToDate\Controller\OptionsController;
-use Acti\AmIUpToDate\Controller\RouteController;
+define('AMIUPTODATE_SRC', WPMU_PLUGIN_DIR . '/am_i_up_to_date_wp/src');
 
 add_action('init', 'initUpToDateProcess');
 
 function initUpToDateProcess()
 {
+    require_once AMIUPTODATE_SRC . '/Controller/DataController.php';
+    require_once AMIUPTODATE_SRC . '/Controller/OptionsController.php';
+    require_once AMIUPTODATE_SRC . '/Controller/RouteController.php';
+
     new OptionsController();
     new RouteController();
 }
