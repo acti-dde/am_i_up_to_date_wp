@@ -54,9 +54,13 @@
             $data = array();
             $dataController = new DataController();
             $phpVersion = explode('-', phpversion());
-            $data['php'] = is_array($phpVersion) ? $phpVersion[0] : $phpVersion;
+            if (is_array($phpVersion)) {
+                $phpVersion = $phpVersion[0];
+            }
+            $data['php'] = $phpVersion;
             $data['cms'] = 'wordpress-' . $dataController->getWordpressVersion();
             $data['plugins'] = $dataController->getPluginsVersions();
+            var_dump($data);die;
 
             return $data;
         }
