@@ -60,7 +60,6 @@
             $data['php'] = $phpVersion;
             $data['cms'] = 'wordpress-' . $dataController->getWordpressVersion();
             $data['plugins'] = $dataController->getPluginsVersions();
-            var_dump($data);die;
 
             return $data;
         }
